@@ -1,4 +1,6 @@
 <div class='container px-5 px-sm-0'>
+  <!--layouts/errorsというエラーメッセージを表示する部分テンプレートがあるためそれを使うことで、エラーメッセージを表示させることができます。-->
+    <%= render 'layouts/errors', obj: @book %>
   <div class='row'>
     <div class='col-md-3'>
       <h2>User info</h2>

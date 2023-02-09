@@ -11,8 +11,20 @@
   <body>
     <%= render 'layouts/header' %>
       <main>
-        <p id="notice"><%= notice %></p>
+        <div class="body">
+          <div class="container">
+            <p id="notice"><%= notice %></p>
+            <%= yield %>
+          </div>
+        </div>
       </main>
     <%= render 'layouts/footer' %>
   </body>
 </html>
+<!--yield %>は、ここに各ページの内容として別途作成されたhtmlファイルの内容を持ってくるメソッドになります。
+・application.html.erbでhtmlやheadタグなどの共通レイアウト
+・アクション名.html.erbでbodyタグ内の個別レイアウト
+この２つを役割分担して画面表示しています。
+その分割するための機能としてyieldメソッドを使用しており、
+yieldメソッドがないとレイアウトが表示されないということが起きてしまいます。
+-->

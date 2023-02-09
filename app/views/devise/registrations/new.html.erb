@@ -6,7 +6,13 @@
         <%= render "devise/shared/error_messages", resource: resource %>
         <div class="field">
           <%= f.label :name %><br />
-          <%= f.name_field :name, autofocus: true, class: "name" %>
+          <%= f.text_field :name, autofocus: true, class: "name" %>
+          <!--form_forでname_fieldは使用できないためエラーが出ています。
+form_forで使用できるhtmlタグ名には下記のような種類があります。
+text_field 一行のテキスト投稿フォーム
+text_area 複数行のテキスト投稿フォーム
+この他にも多数ありますので調べてみましょう。
+今回は一行のテキスト投稿フォームで十分ですのでtext_fieldに変更しましょう。-->
         </div>
         <div class="field">
           <%= f.label :email %><br />

@@ -5,8 +5,12 @@
     <%= form_with model:@user, local:true do |f| %>
       <%= render 'layouts/errors', obj: @user %>
       <div class="form-group">
-        <%= f.label :title %>
-        <%= f.text_field :title, class: "form-control name" %>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "name" %>
+        <!--ターミナルのログを確認すると[Unpermitted parameter: :title]というエラーが出力されています。
+これを日本語にすると、[titleというパラメーターは許可されていない]となります。
+db/scheme.rbを確認してもusersテーブルにはtitleというカラムは存在しておらず、名前のカラムにはnameが使われています。
+今回は名前のアップデートをすることができないため、フォームで送る部分のinputタグに原因があると推測でき、Viewを確認すると名前を入力する箇所の属性がtitleとなっているため、名前のカラムであるnameに修正を行います。-->
       </div>
      <div class="form-group">
         <%= f.label :image %>
