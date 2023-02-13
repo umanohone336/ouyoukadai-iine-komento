@@ -4,3 +4,5 @@ class BookComment < ApplicationRecord
     
     validates :comment, presence: true
 end
+# presenceは指定された属性が空でないことを確認します
+# バリデーションは、正しいデータだけをデータベースに保存するために行われます
